@@ -2,16 +2,19 @@ import java.util.*;
 
 class Solution {
     public int[] solution(long n) {
-        List<Integer> list = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
         
         while (n > 0) {
-            list.add((int)(n % 10));
+            int num = (int)(n % 10);
+            result.add(num);
             n /= 10;
         }
         
-        int[] answer = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            answer[i] = list.get(i);
+        int len = result.size();
+        int[] answer = new int[len];
+        
+        for (int i = 0; i < len; i++) {
+            answer[i] = result.get(i);
         }
         
         return answer;
